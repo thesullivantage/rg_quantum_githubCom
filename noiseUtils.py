@@ -65,18 +65,3 @@ def post_fidelity(c1, c2):
     bc = 1 - (hf * hf)
     return bc * bc
 
-
-# In[156]:
-
-
-backend = provider.backends.ibmqx2
-print ("Pure Sim:", pure_sim_noise(qc_raw, backend))
-print ("IBM:", actual_noise(qc_raw, backend))
-
-
-# In[132]:
-
-
-qc_transpiled = transpile(qc_raw, backend=backend)
-qc_transpiled.draw('mpl')
-
